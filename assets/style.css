@@ -39,5 +39,5 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 
 main {
-  background: var(--background);
+  /* background: var(--background); */
 }

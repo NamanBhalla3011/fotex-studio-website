@@ -278,10 +278,6 @@ header {
   margin: 18px auto;
 }
 .footer {
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  z-index: -4;
   background: #171615;
   color: #eee;
   padding: 64px 0 25px;
