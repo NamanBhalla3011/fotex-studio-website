@@ -35,9 +35,3 @@
   margin: 0 -10px;
   border: 1px solid var(--clay);
 }
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-
-main {
-  /* background: var(--background); */
-}

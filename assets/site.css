@@ -3,12 +3,14 @@
   --paper: #f7f4ef;
   --sand: #e7ded2;
   --clay: #a36142;
+  /* --clay: #000; */
   --muted: #74706a;
   --line: #dcd5cb;
   --background: #ffffff;
   --serif: Georgia, "Times New Roman", serif;
   --sans: Arial, Helvetica, sans-serif;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -251,24 +253,106 @@ header {
 .gallery-grid a:hover img {
   transform: scale(1.04);
 }
+
 .quote {
   background: var(--ink);
   color: #fff;
   text-align: center;
   padding: 110px 20px;
+  overflow: hidden;
 }
-.quote blockquote {
+
+.quote .eyebrow {
+  color: #d8b99e;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.quote-slider {
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.quote-track {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.quote-slide {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.quote-slide blockquote {
   max-width: 850px;
-  margin: 15px auto;
-  font: clamp(2rem, 4vw, 3.6rem)/1.16 var(--serif);
+  margin: 15px auto 30px;
+  font: clamp(2rem, 2vw, 2rem)/1.16 var(--serif);
 }
-.quote cite {
+
+.quote-slide cite {
+  display: block;
   font-style: normal;
   font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #d8b99e;
 }
+
+.quote-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 45px;
+}
+
+.quote-arrow {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.quote-arrow:hover {
+  background: #d8b99e;
+  color: var(--ink);
+}
+
+.quote-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quote-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    transform 0.3s;
+}
+
+.quote-dot.active {
+  background: #d8b99e;
+  transform: scale(1.4);
+}
+
 .cta {
   padding: 110px 0;
   text-align: center;
@@ -281,6 +365,10 @@ header {
   background: #171615;
   color: #eee;
   padding: 64px 0 25px;
+}
+.footer .footer-logo {
+  max-width: 300px;
+  height: auto;
 }
 .footer-grid {
   display: grid;
@@ -441,6 +529,7 @@ header {
   padding: 12px;
   color: #315035;
 }
+
 @media (max-width: 760px) {
   .links {
     display: none;
@@ -492,6 +581,7 @@ header {
   .footer-grid {
     grid-template-columns: 1fr;
   }
+
   .package,
   .testimonial,
   .post {
@@ -510,5 +600,27 @@ header {
   .legal span {
     display: block;
     margin-bottom: 7px;
+  }
+  .quote {
+    padding: 75px 15px;
+  }
+
+  .quote-slide {
+    padding: 0 5px;
+  }
+
+  .quote-slide blockquote {
+    font-size: clamp(1.7rem, 7vw, 2.4rem);
+  }
+
+  .quote-controls {
+    margin-top: 35px;
+    gap: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-track {
+    transition: none;
   }
 }
